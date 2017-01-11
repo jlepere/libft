@@ -6,7 +6,7 @@
 /*   By: jlepere <jlepere@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:44:50 by jlepere           #+#    #+#             */
-/*   Updated: 2017/01/10 18:53:36 by jlepere          ###   ########.fr       */
+/*   Updated: 2017/01/11 14:44:04 by jlepere          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ size_t				ft_arrlen(char **as);
 size_t				ft_intlen(int n);
 size_t				ft_hash(const char *str);
 
-t_file				*open_file(char *filename);
-void				*free_file(t_file *file);
-int					get_next_line(t_file *file, char **line);
+t_file				*ft_open_file(char *filename);
+void				*ft_free_file(t_file *file);
+int					ft_next_line(t_file *file, char **line);
 
 #endif

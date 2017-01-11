@@ -6,7 +6,7 @@
 /*   By: jlepere <jlepere@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 16:08:40 by jlepere           #+#    #+#             */
-/*   Updated: 2017/01/10 18:53:56 by jlepere          ###   ########.fr       */
+/*   Updated: 2017/01/11 14:43:42 by jlepere          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-t_file		*open_file(char *filename)
+t_file		*ft_open_file(char *filename)
 {
 	t_file	*file;
 
 	if (!filename || !(file = ft_memalloc(sizeof(struct s_file))))
 		return (NULL);
 	if ((file->fd = open(filename, O_RDONLY)) == -1)
-		return (free_file(file));
+		return (ft_free_file(file));
 	file->read = NULL;
 	file->buffer = NULL;
 	return (file);
 }
 
-void		*free_file(t_file *file)
+void		*ft_free_file(t_file *file)
 {
 	if (!file)
 		return (NULL);
@@ -41,7 +41,7 @@ void		*free_file(t_file *file)
 	return ((file = NULL));
 }
 
-static int	read_file(t_file *file)
+static int	ft_read_file(t_file *file)
 {
 	char	*tmp;
 
@@ -55,14 +55,14 @@ static int	read_file(t_file *file)
 	return (1);
 }
 
-int			get_next_line(t_file *file, char **line)
+int			ft_next_line(t_file *file, char **line)
 {
 	int		size;
 	char	*data;
 
 	if (!file || !line)
 		return (-1);
-	if (!file->buffer && !read_file(file))
+	if (!file->buffer && !ft_read_file(file))
 		return (0);
 	while (file->buffer[file->index])
 	{
@@ -78,7 +78,7 @@ int			get_next_line(t_file *file, char **line)
 			return ((file->index = 0) + 1);
 		}
 		if (++file->index == (int)ft_strlen(file->buffer))
-			read_file(file);
+			ft_read_file(file);
 	}
 	return (0);
 }
