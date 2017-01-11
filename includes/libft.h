@@ -6,12 +6,13 @@
 /*   By: jlepere <jlepere@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:44:50 by jlepere           #+#    #+#             */
-/*   Updated: 2016/11/04 11:20:01 by jlepere          ###   ########.fr       */
+/*   Updated: 2017/01/10 18:53:36 by jlepere          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 32
 
 # include <string.h>
 
@@ -21,6 +22,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_file
+{
+	int				fd;
+	int				index;
+	char			*read;
+	char			*buffer;
+}					t_file;
 
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -92,5 +101,9 @@ void				ft_arrdel(char **as);
 size_t				ft_arrlen(char **as);
 size_t				ft_intlen(int n);
 size_t				ft_hash(const char *str);
+
+t_file				*open_file(char *filename);
+void				*free_file(t_file *file);
+int					get_next_line(t_file *file, char **line);
 
 #endif

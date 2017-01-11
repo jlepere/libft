@@ -81,3 +81,4 @@ ft_arrdel
 ft_arrlen
 ft_intlen
 ft_hash
+ft_file
