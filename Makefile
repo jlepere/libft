@@ -6,7 +6,7 @@
 #    By: jlepere <jlepere@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/26 14:36:04 by jlepere           #+#    #+#              #
-#*   Updated: 2017/01/10 16:54:19 by jlepere          ###   ########.fr       *#
+#*   Updated: 2017/01/23 13:57:11 by jlepere          ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC_NAME = ft_memcmp.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 		   ft_atoi.c ft_itoa.c \
 		   ft_lstnew.c ft_lstmap.c ft_lstdel.c ft_lstdelone.c ft_lstadd.c \
 		   ft_lstiter.c \
-		   ft_arrdel.c ft_arrlen.c ft_intlen.c ft_hash.c ft_file.c
+		   ft_exit.c ft_arrdel.c ft_arrlen.c ft_intlen.c ft_hash.c \
+		   ft_file.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))

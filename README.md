@@ -77,6 +77,7 @@ ft_itoa
 
 ## my functions
 
+ft_exit
 ft_arrdel
 ft_arrlen
 ft_intlen

@@ -6,7 +6,7 @@
 /*   By: jlepere <jlepere@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:44:50 by jlepere           #+#    #+#             */
-/*   Updated: 2017/01/11 14:44:04 by jlepere          ###   ########.fr       */
+/*   Updated: 2017/01/23 13:56:47 by jlepere          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
+void				ft_exit(char *str, int exitcode);
 void				ft_arrdel(char **as);
 size_t				ft_arrlen(char **as);
 size_t				ft_intlen(int n);
