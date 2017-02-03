@@ -6,7 +6,7 @@
 /*   By: jlepere <jlepere@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 16:08:40 by jlepere           #+#    #+#             */
-/*   Updated: 2017/01/11 14:43:42 by jlepere          ###   ########.fr       */
+/*   Updated: 2017/02/03 10:00:37 by jlepere          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ static int	ft_read_file(t_file *file)
 
 	if (!file->read)
 		file->read = ft_strnew(BUFF_SIZE);
+	else
+		ft_strclr(file->read);
 	if (read(file->fd, file->read, BUFF_SIZE) == 0)
 		return (0);
 	tmp = file->buffer;
